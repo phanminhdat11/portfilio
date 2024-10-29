@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       // Customization nằm trong phần này
       height: {
-        '500px': '500px',
+        '400px': '500px',
       },
 
     },

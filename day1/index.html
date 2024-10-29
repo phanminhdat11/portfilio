@@ -16,32 +16,58 @@
 </head>
 
 <body>
-    <nav id="navbar" class="fixed top-0 z-50 w-screen transition-all duration-500 ease-in-out text-black">
-        <div class="flex justify-around items-center h-24 w-full">
+    <nav id="navbar" class="fixed top-0 z-50 w-screen transition-all duration-500 md:px-36 px-0 ease-in-out text-black bg-white">
+        <div class="flex justify-between items-center h-24 w-full px-5 md:px-10">
+            <!-- Logo -->
             <div class="flex justify-center items-center w-36 h-10">
                 <a href="">
                     <img src="./assets/img/lodo_porfolio.png" alt="Logo">
                 </a>
             </div>
-            <div class="flex items-center h-10">
+
+            <!-- Menu chính chỉ hiển thị trên màn hình lớn -->
+            <div class="hidden sm:flex items-center h-10">
                 <ul class="flex items-center justify-between space-x-11">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#resume">Resume</a></li>
-                    <li><a href="#porfolio">Projects</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li class="h-11 bg-red-600 flex items-center px-4 rounded-full"><a class="text-white font-bold"
-                            href="./assets/data/CV_PhanMinhDat.pdf" download="CV_PhanMinhDat.pdf">Download CV</a></li>
+                    <li class="h-11 bg-red-600 flex items-center px-4 rounded-full">
+                        <a class="text-white font-bold" href="./assets/data/CV_PhanMinhDat.pdf"
+                            download="CV_PhanMinhDat.pdf">Download CV</a>
+                    </li>
                 </ul>
             </div>
+
+            <!-- Icon menu hamburger hiển thị khi màn hình nhỏ -->
+            <div class="sm:hidden flex items-center">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu dropdown cho màn hình nhỏ -->
+        <div id="mobile-menu" class="hidden sm:hidden">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="h-11 bg-red-600 flex items-center px-4 rounded-full">
+                    <a class="text-white font-bold" href="./assets/data/CV_PhanMinhDat.pdf"
+                        download="CV_PhanMinhDat.pdf">Download CV</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-
     <section id="home">
-        <div class="flex relative max-h-screen h-screen w-[100%] max-w-[1400px] mx-44">
+        <div class="flex relative max-h-screen h-screen w-[100%] max-w-[1400px]  mx-44 hidden md:block">
             <div class="flex justify-between items-center w-full h-full">
-                <div class="w-2/5 bg-white">
+                <div class="w-2/5 bg-white hidden md:block">
                     <div class="relative">
                         <h3 class="text-3xl font-bold mb-1">Hello, I'm</h3>
                         <h3 class="text-7xl font-bold mb-6">Minh Dat</h3>
@@ -58,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-3/5 pl-64 ">
+                <div class="w-3/5 pl-64">
                     <div class="relative">
                         <img class="relative min-w-full" src="https://devman-react.vercel.app/img/thumbs/53-61.jpg"
                             alt="">
@@ -69,13 +95,14 @@
                             class="w-24 h-24 bg-white border-4 border-blue-400 flex justify-center items-center rounded-2xl -right-7 -top-10 absolute text-6xl">
                             <i class="fa fa-github" aria-hidden="true"></i>
                         </span>
-                        <div class="w-32 h-16 bg-white top-11 -left-20 rounded-xl absolute">
+                        <div class="w-32 h-16 bg-white top-11 -left-20 rounded-xl absolute hidden md:block">
                             <div class="flex items-center  pl-3 pt-3 space-x-2">
                                 <h3 class="text-blue-300 text-4xl font-bold"><span>6</span></h3>
                                 <span class="text-sm font-bold">months of <br>experience</span>
                             </div>
                         </div>
-                        <div class="h-16 w-36 bg-white  bottom-6 -right-28  border-2 rounded-xl absolute">
+                        <div
+                            class="h-16 w-36 bg-white  bottom-6 -right-28  border-2 rounded-xl absolute hidden md:block">
                             <div class="flex items-center  pl-3 pt-3 space-x-2">
                                 <h3 class="text-red-400 text-3xl font-bold "><span>A</span><span
                                         class="-top-1 absolute text-2xl">+</span></h3>
@@ -83,7 +110,7 @@
                             </div>
                         </div>
                         <div
-                            class="circle flex items-center justify-center rounded-full h-40 w-40  absolute -bottom-20 -left-20">
+                            class="circle flex items-center justify-center rounded-full h-40 w-40  absolute -bottom-20 -left-20 hidden md:block">
                             <div class="text w-full h-full absolute">
                                 <p>I'm a - Fresher Developer from Ho Chi Minh</p>
                             </div>
@@ -93,7 +120,29 @@
             </div>
 
         </div>
+        <div class="flex flex-col justify-center items-center block md:hidden pt-40">
+           <div class="w-2/3 h-96 rounded-xl bg-cover bg-center" style="background-image: url(./assets/img/IMG_4687.JPG);">
+          
+           </div>
+            <div class="relative text-center my-10">
+                <h3 class="text-xl font-bold mb-1">Hello, I'm</h3>
+                <h3 class="text-5xl font-bold mb-6">Minh Dat</h3>
+                <h3 class="text-xl font-bold mb-8">Fresher Developer <span class="auto-type text-yellow-400"></span>
+                </h3>
+                <p class="mb-10">With over 6 months of experience in developing web and mobile applications</p>
+                <div class="flex justify-center items-center">
+                    <div class="h-10 w-28 flex items-center justify-center rounded-full bg-black text-white mb-2">
+                        <a href="">Contact</a>
+                    </div>
+                    <div class="h-10 w-28 flex items-center justify-center rounded-full bg-transparent">
+                        <a href="#id">About Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
+
     <section>
         <div class="bg-gray-800 text-white py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
@@ -103,7 +152,8 @@
                     <div class="text-red-500 text-2xl font-bold mb-2">01</div>
                     <div class="text-3xl font-bold mb-4">Communication</div>
                     <hr class="border-t border-gray-600 mb-4">
-                    <p class="text-gray-400">Good communication skills help you work effectively with colleagues, present ideas clearly and make a good impression in the work environment.</p>
+                    <p class="text-gray-400">Good communication skills help you work effectively with colleagues,
+                        present ideas clearly and make a good impression in the work environment.</p>
                 </div>
 
                 <!-- Second card -->
@@ -111,7 +161,8 @@
                     <div class="text-red-500 text-2xl font-bold mb-2">02</div>
                     <div class="text-3xl font-bold mb-4">Proactive spirit</div>
                     <hr class="border-t border-gray-600 mb-4">
-                    <p class="text-gray-400">The ability to self-motivate, self-learn and always be ready for new tasks, helps you show dynamism at work.</p>
+                    <p class="text-gray-400">The ability to self-motivate, self-learn and always be ready for new tasks,
+                        helps you show dynamism at work.</p>
                 </div>
 
                 <!-- Third card -->
@@ -127,35 +178,38 @@
 
 
     </section>
-    <section id="about">
-        <div class="flex relative max-h-screen h-screen w-[100%] max-w-[1400px]">
-            <div class="flex justify-between items-center w-full h-full mx-44 mt-32">
-                <div class="w-2/5 h-full pr-20">
 
+    
+    <section id="about">
+        <div class="flex relative max-h-full h-full w-full max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center w-full h-full mx-5 md:mx-44 mt-32">
+                <!-- Phần ảnh lớn -->
+                <div class="w-full md:w-2/5 h-full pr-0 md:pr-20 relative">
                     <div class="relative">
                         <img class="relative min-w-full" src="https://devman-react.vercel.app/img/thumbs/53-61.jpg"
                             alt="">
                         <div data-aos="fade-up"
-                            class="bg-cover bg-center rounded-2xl  top-0 left-0 bottom-0 right-0 bg-no-repeat absolute"
-                            style="background-image: url(./assets/img/IMG_3178.JPG);">
-                        </div>
+                            class="bg-cover bg-center rounded-2xl top-0 left-0 bottom-0 right-0 bg-no-repeat absolute"
+                            style="background-image: url(./assets/img/IMG_3178.JPG);"></div>
 
-                        <div data-aos="fade-up" class="bg-cover bg-center h-20 w-20  absolute -top-7  -right-9 "
+                        <!-- Các ảnh nhỏ, sẽ chỉ hiển thị khi màn hình lớn -->
+                        <div data-aos="fade-up"
+                            class="bg-cover bg-center h-20 w-20 absolute -top-7 -right-9 hidden md:block"
                             style="background-image: url(./assets/img/angular.png);"></div>
                         <div data-aos="fade-up"
-                            class="bg-cover bg-center h-52 w-52 rounded-3xl absolute shadow-xl -left-24 -bottom-20"
-                            style="background-image: url(./assets//img/cafedev_flutterin.png);">
-                        </div>
+                            class="bg-cover bg-center h-52 w-52 rounded-3xl absolute shadow-xl -left-24 -bottom-20 hidden md:block"
+                            style="background-image: url(./assets//img/cafedev_flutterin.png);"></div>
                         <div data-aos="fade-up"
-                            class="bg-cover  bg-center  h-14 w-14 top-20 -left-20 rounded-lg absolute"
+                            class="bg-cover bg-center h-14 w-14 top-20 -left-20 rounded-lg absolute hidden md:block"
                             style="background-image: url(./assets/img/nodejs.png);"></div>
                         <div data-aos="fade-up"
-                            class="bg-cover bg-center h-20 w-20 rounded-xl absolute -bottom-10 right-20"
+                            class="bg-cover bg-center h-20 w-20 rounded-xl absolute -bottom-10 right-20 hidden md:block"
                             style="background-image: url(../day1/assets/img/img_js.webp);"></div>
-
                     </div>
                 </div>
-                <div class="w-3/5 h-full ">
+
+                <!-- Phần thông tin -->
+                <div class="w-full md:w-3/5 h-full mt-8 md:mt-0">
                     <div class="relative">
                         <h3 data-aos="fade-up" class="font-bold text-4xl">About Me</h3>
                         <p data-aos="fade-up" class="mt-8">
@@ -167,7 +221,7 @@
                         <div data-aos="fade-up" class="grid grid-cols-2 gap-x-1 gap-y-4 text-lg pt-10">
                             <h3 class="font-bold">Name:</h3>
                             <p>Phan Minh Dat</p>
-                            <h3 class="font-bold">Date Birtday:</h3>
+                            <h3 class="font-bold">Date Birthday:</h3>
                             <p>22-08-2001</p>
                             <h3 class="font-bold">Address:</h3>
                             <p>Ho Chi Minh - Viet Nam</p>
@@ -175,52 +229,50 @@
                             <p>phanminhdat01@gmail.com</p>
                             <h3 class="font-bold">Phone:</h3>
                             <p>+84384028176</p>
-
                         </div>
                         <div
-                            class="h-11 w-40 bg-blue-600 hover:bg-blue-400 flex justify-center items-center  rounded-full mt-10">
-                            <a class="text-white font-bold" href="#porfolio">View Porfolio</a>
+                            class="h-11 w-40 bg-blue-600 hover:bg-blue-400 flex justify-center items-center rounded-full mt-10">
+                            <a class="text-white font-bold" href="#portfolio">View Portfolio</a>
                         </div>
-
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <section id="resume">
-        <div class="flex mx-44 mb-16 ">
-            <div class="w-1/4 h-full ">
-                <ul class="text-2xl font-bold text-black space-y-4">
-                    <li><a href="">Eduaction</a></li>
-                    <li><a href=""></a>Experience</li>
-                    <li><a href="">Skills</a></li>
+
+    <section id="resume" class="md:mt-48 mt-20">
+        <div class="flex flex-col md:flex-row mx-4 md:mx-44 ">
+            <div class="w-full md:w-1/4 h-auto mb-8 md:mb-0">
+                <ul class="text-xl hidden sm:block md:text-2xl font-bold text-black space-y-4">
+                    <li><a href="" class="hover:text-blue-600">Education</a></li>
+                    <li><a href="" class="hover:text-blue-600">Experience</a></li>
+                    <li><a href="" class="hover:text-blue-600">Skills</a></li>
                 </ul>
             </div>
-            <div class="h-full w-3/4 pl-14">
+            <div class="h-full w-full md:w-3/4 pl-0 md:pl-14">
                 <div data-aos="fade-up">
-                    <h3 class="text-4xl text-blue-600 font-bold">Education</h3>
+                    <h3 class="text-3xl md:text-4xl text-blue-600 font-bold">Education</h3>
                     <div class="flex w-full h-60 mt-9 ">
                         <div class="w-16 h-full ">
                             <div class="flex justify-center items-center w-full h-16 rounded-full bg-blue-400 text-3xl">
                                 <i class="fa fa-graduation-cap text-white" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <div class="w-4/5 ml-11 ">
-                            <h3 class="text-xl font-bold text-blue-500">2019-2024</h3>
-                            <h3 class="text-2xl font-bold">Computer Engineering</h3>
+                        <div class="w-4/5 ml-4 md:ml-11">
+                            <h3 class="text-lg md:text-xl font-bold text-blue-500">2019-2024</h3>
+                            <h3 class="text-xl md:text-2xl font-bold">Computer Engineering</h3>
                             <div class="flex items-center space-x-4">
-                                <p class="text-lg font-bold mt-4">HCMC University of Industrial </p>
+                                <p class="text-base md:text-lg font-bold mt-4">HCMC University of Industrial</p>
                                 <div class="h-10 w-10 bg-black rounded-full bg-cover bg-center"
                                     style="background-image: url(./assets/img/logo_univ.avif);"></div>
                             </div>
 
-                            <p class="mt-6 text-gray-400"> I am a fresh graduate with over 6 months of experience in
-                                developing web and mobile
-                                applications gained through academic projects, personal research, and hands-on
-                                experience. I
-                                am eager to contribute to real-world projects and continue learning in a professional
+                            <p class="mt-6 text-gray-400 text-sm md:text-base">I am a fresh graduate with over 6 months
+                                of experience in
+                                developing web and mobile applications gained through academic projects, personal
+                                research, and hands-on
+                                experience. I am eager to contribute to real-world projects and continue learning in a
+                                professional
                                 environment.
                             </p>
                             <div class="w-full h-0.5 bg-gray-400 mt-5"></div>
@@ -229,181 +281,189 @@
 
                 </div>
                 <div data-aos="fade-up" class="mt-28">
-                    <h3 class="text-4xl text-blue-600 font-bold">Experience</h3>
+                    <h3 class="text-3xl md:text-4xl text-blue-600 font-bold">Experience</h3>
                     <div class="flex w-full h-60 mt-9 ">
                         <div class="w-16 h-full ">
                             <div class="flex justify-center items-center w-full h-16 rounded-full bg-blue-400 text-3xl">
                                 <i class="fa fa-briefcase text-white" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <div class="w-4/5 ml-11 ">
-                            <h3 class="text-xl font-bold text-blue-500">Dec 2023- Jun 2024</h3>
-                            <h3 class="text-2xl font-bold">Software Engineer Intern</h3>
+                        <div class="w-4/5 ml-4 md:ml-11">
+                            <h3 class="text-lg md:text-xl font-bold text-blue-500">Dec 2023- Jun 2024</h3>
+                            <h3 class="text-xl md:text-2xl font-bold">Software Engineer Intern</h3>
                             <div class="flex items-center space-x-4">
-                                <p class="text-lg font-bold mt-4">WebMedia Company</p>
+                                <p class="text-base md:text-lg font-bold mt-4">WebMedia Company</p>
                                 <div class="h-10 w-10 bg-black rounded-full bg-cover bg-center"
-                                    style="background-image: url(./assets//img/logo_company.png);"></div>
+                                    style="background-image: url(./assets/img/logo_company.png);"></div>
                             </div>
 
                             <p class="mt-6 text-gray-400">
                             <h3 class="font-bold">Responsibility:</h3>
-                            <li class="text-gray-400">Assisting in UI/UX Development: Collaborate with the design team
-                                to implement UI/UX
-                                designs using Flutter widgets and components.</li>
-                            <li class="text-gray-400">Developing new features and functionalities in Flutter
-                                applications. Handling events and
-                                interactions. Test on iOS and Android operating systems.</li>
-                            <li class="text-gray-400">Integration with Backend Services: Conducted RESTful API testing
-                                (HTTP methods or Dio
-                                Interceptor), including verifying data exchange, authentication, and response validation
-                                using NodeJS(ExpressJS).</li>
-                            <li class="text-gray-400">Installed and maintained MongoDB databases for test data
-                                management and retrieval
-                                database.</li>
-                            <li class="text-gray-400">Get Google Maps API and integrate it into the tracking
-                                application.</li>
-
+                            <ul class="text-gray-400 list-disc list-inside">
+                                <li>Assisting in UI/UX Development: Collaborate with the design team to implement UI/UX
+                                    designs using Flutter widgets and components.</li>
+                                <li>Developing new features and functionalities in Flutter applications. Handling events
+                                    and interactions. Test on iOS and Android operating systems.</li>
+                                <li>Integration with Backend Services: Conducted RESTful API testing (HTTP methods or
+                                    Dio Interceptor), including verifying data exchange, authentication, and response
+                                    validation using NodeJS (ExpressJS).</li>
+                                <li>Installed and maintained MongoDB databases for test data management and retrieval
+                                    database.</li>
+                                <li>Get Google Maps API and integrate it into the tracking application.</li>
+                            </ul>
                             </p>
                             <div class="w-full h-0.5 bg-gray-400 mt-5"></div>
                         </div>
                     </div>
 
                 </div>
-                <div data-aos="fade-up" class="mt-64">
-                    <h3 class="text-2xl font-bold text-blue-600">Skills</h3>
-                    <div class="grid grid-cols-3 gap-4 mt-9">
-                        <div class="h-80 w-60 rounded-xl bg-white shadow-2xl text-center cursor-pointer">
+
+                <div data-aos="fade-up" class="mt-96 relative">
+                    <h3 class="text-3xl md:text-2xl font-bold text-blue-600">Skills</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-9">
+                        <div class="h-80 w-full md:w-60 rounded-xl bg-white shadow-2xl text-center cursor-pointer">
                             <h2 class="text-black text-2xl font-bold p-5">Angular</h2>
                             <div class="flex justify-center items-center">
                                 <div
-                                    class="flex justify-center items-center w-48 h-48 rounded-full  border-4 border-red-500">
+                                    class="flex justify-center items-center w-48 h-48 rounded-full border-4 border-red-500">
                                     <h3 class="text-3xl font-bold">90%</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="h-80 w-60 rounded-xl bg-white shadow-2xl text-center cursor-pointer">
+                        <div class="h-80 w-full md:w-60 rounded-xl bg-white shadow-2xl text-center cursor-pointer">
                             <h2 class="text-black text-2xl font-bold p-5">Flutter</h2>
                             <div class="flex justify-center items-center">
                                 <div
-                                    class="flex justify-center items-center w-48 h-48 rounded-full  border-4 border-red-500">
+                                    class="flex justify-center items-center w-48 h-48 rounded-full border-4 border-red-500">
                                     <h3 class="text-3xl font-bold">50%</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="h-80 w-60 rounded-xl bg-white shadow-2xl text-center cursor-pointer">
+                        <div class="h-80 w-full md:w-60 rounded-xl bg-white shadow-2xl text-center cursor-pointer">
                             <h2 class="text-black text-2xl font-bold p-5">NodeJS</h2>
                             <div class="flex justify-center items-center">
                                 <div
-                                    class="flex justify-center items-center w-48 h-48 rounded-full  border-4 border-red-500">
+                                    class="flex justify-center items-center w-48 h-48 rounded-full border-4 border-red-500">
                                     <h3 class="text-3xl font-bold">70%</h3>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    <div class="grid grid-cols-2 gap-10 mt-9">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-9">
                         <div data-aos="fade-up">
-                            <span class="text-red-600  font-bold">JavaScript</span>
-                            <div class="h-2 w-80 bg-black relative rounded-full overflow-hidden">
+                            <span class="text-red-600 font-bold">JavaScript</span>
+                            <div class="h-2 w-full md:w-80 bg-black relative rounded-full overflow-hidden">
                                 <div class="absolute h-full w-64 bg-blue-400"></div>
                             </div>
                         </div>
                         <div data-aos="fade-up">
-                            <span class="text-red-600  font-bold">HTML</span>
-                            <div class="h-2 w-80 bg-black relative rounded-full overflow-hidden">
+                            <span class="text-red-600 font-bold">HTML</span>
+                            <div class="h-2 w-full md:w-80 bg-black relative rounded-full overflow-hidden">
                                 <div class="absolute h-full w-64 bg-blue-400"></div>
                             </div>
                         </div>
                         <div data-aos="fade-up">
-                            <span class="text-red-600  font-bold">CSS</span>
-                            <div class="h-2 w-80 bg-black relative rounded-full overflow-hidden">
+                            <span class="text-red-600 font-bold">CSS</span>
+                            <div class="h-2 w-full md:w-80 bg-black relative rounded-full overflow-hidden">
                                 <div class="absolute h-full w-64 bg-blue-400"></div>
                             </div>
                         </div>
                         <div data-aos="fade-up">
-                            <span class="text-red-600  font-bold">TypeScript</span>
-                            <div class="h-2 w-80 bg-black relative rounded-full overflow-hidden">
+                            <span class="text-red-600 font-bold">TypeScript</span>
+                            <div class="h-2 w-full md:w-80 bg-black relative rounded-full overflow-hidden">
                                 <div class="absolute h-full w-64 bg-blue-400"></div>
                             </div>
                         </div>
                         <div data-aos="fade-up">
-                            <span class="text-red-600  font-bold">Dart</span>
-                            <div class="h-2 w-80 bg-black relative rounded-full overflow-hidden">
+                            <span class="text-red-600 font-bold">Dart</span>
+                            <div class="h-2 w-full md:w-80 bg-black relative rounded-full overflow-hidden">
                                 <div class="absolute h-full w-64 bg-blue-400"></div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
             </div>
-
         </div>
-
     </section>
-    <section id="porfolio">
-        <div class=" mt-40 mx-44 mb-20 space-y-12">
-            <div  class="h-24 w-auto text-center">
-                <h3 data-aos="fade-up" class="text-2xl font-semibold text-red-400">Portfolio</h3>
-                <h3 data-aos="fade-up" class="text-6xl font-bold tracking-wider text-black">My Projects</h3>
+
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 lg:px-20 xl:px-44 space-y-12">
+
+            <!-- Tiêu đề -->
+            <div class="text-center space-y-4">
+                <h3 data-aos="fade-up" class="text-xl md:text-2xl font-semibold text-red-400">Portfolio</h3>
+                <h3 data-aos="fade-up" class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider text-black">My
+                    Projects</h3>
             </div>
 
+            <!-- Project 1 -->
             <div data-aos="fade-up" class="relative">
                 <a href="https://github.com/goodviet/E-commerceTS.git" rel="noopener noreferrer" target="_blank"
                     class="block">
-                    <div class="w-auto h-96 bg-black rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="w-full h-72 md:h-96 bg-black rounded-2xl overflow-hidden cursor-pointer">
                         <div class="w-full h-full bg-cover bg-center transition-transform duration-500 transform hover:scale-110"
                             style="background-image: url(./assets/img/project_web.jpg);">
                         </div>
                         <!-- Nút nhấn -->
-                        <div class="w-96 h-64 bg-white absolute bottom-20 left-8 rounded-2xl p-8 space-y-4">
-                            <h3 class="text-red-600 font-bold">E-commerce</h3> <span></span>
-                            <h1 class="text-3xl font-bold">Web Application for Desiverse</h1>
-                            <h3
-                                class="ml-44 h-10 w-36 text-center hover:bg-red-600 bg-red-500 rounded-full py-2 text-white space-x-2">
-                                View Project <span><i class="fa fa-external-link" aria-hidden="true"></i></span>
-                            </h3>
+                        <div
+                            class="absolute bottom-5 left-5 md:bottom-10 md:left-10 bg-white p-4 md:p-8 rounded-2xl space-y-2 md:space-y-4 w-3/4 md:w-96 h-48 md:h-64">
+                            <h3 class="text-red-600 font-bold">E-commerce</h3>
+                            <h1 class="text-lg md:text-2xl font-bold">Web Application for Desiverse</h1>
+                            <!-- Nút view project responsive -->
+                            <button
+                                class="flex items-center justify-center w-full h-10 sm:w-28 sm:h-8 md:w-36 md:h-10 bg-red-500 rounded-full text-white text-sm md:text-base hover:bg-red-600 focus:outline-none transition-all duration-300">
+                                View Project <span class="ml-2"><i class="fa fa-external-link"
+                                        aria-hidden="true"></i></span>
+                            </button>
                         </div>
                     </div>
                 </a>
             </div>
 
+            <!-- Project 2 -->
             <div data-aos="fade-up" class="relative">
                 <a href="https://github.com/goodviet/S-mart-app.git" rel="noopener noreferrer" target="_blank"
                     class="block">
-                    <div class="w-auto h-96 bg-black rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="w-full h-72 md:h-96 bg-black rounded-2xl overflow-hidden cursor-pointer">
                         <div class="w-full h-full bg-cover bg-center transition-transform duration-500 transform hover:scale-110"
                             style="background-image: url(./assets/img/img_pjt.png);">
                         </div>
                         <!-- Nút nhấn -->
-                        <div class="w-96 h-64 bg-white absolute bottom-20 right-10 rounded-2xl p-8 space-y-4">
-                            <h3 class="text-red-600 font-bold">SmartBuy</h3> <span></span>
-                            <h1 class="text-3xl font-bold">Smart buy ecommerce mobile app</h1>
-                            <h3
-                                class=" h-10 w-36 text-center hover:bg-red-600 bg-red-500 rounded-full py-2 text-white space-x-2">
-                                View Project <span><i class="fa fa-external-link" aria-hidden="true"></i></span>
-                            </h3>
+                        <div
+                            class="absolute bottom-5 right-5 md:bottom-10 md:right-10 bg-white p-4 md:p-8 rounded-2xl space-y-2 md:space-y-4 w-3/4 md:w-96 h-48 md:h-64">
+                            <h3 class="text-red-600 font-bold">SmartBuy</h3>
+                            <h1 class="text-lg md:text-2xl font-bold">Smart buy ecommerce mobile app</h1>
+                            <!-- Nút view project responsive -->
+                            <button
+                                class="flex items-center justify-center w-full h-10 sm:w-28 sm:h-8 md:w-36 md:h-10 bg-red-500 rounded-full text-white text-sm md:text-base hover:bg-red-600 focus:outline-none transition-all duration-300">
+                                View Project <span class="ml-2"><i class="fa fa-external-link"
+                                        aria-hidden="true"></i></span>
+                            </button>
                         </div>
                     </div>
                 </a>
             </div>
 
-
+            <!-- Project 3 -->
             <div data-aos="fade-up" class="relative">
                 <a href="https://github.com/goodviet/Travel_App_Flutter.git" rel="noopener noreferrer" target="_blank"
                     class="block">
-                    <div class="w-auto h-96 bg-black rounded-2xl overflow-hidden cursor-pointer">
+                    <div class="w-full h-72 md:h-96 bg-black rounded-2xl overflow-hidden cursor-pointer">
                         <div class="w-full h-full bg-cover bg-center transition-transform duration-500 transform hover:scale-110"
                             style="background-image: url(./assets/img/img_travel.jpg);">
                         </div>
                         <!-- Nút nhấn -->
-                        <div class="w-96 h-64 bg-white absolute bottom-20 right-10 rounded-2xl p-8 space-y-4">
-                            <h3 class="text-red-600 font-bold">Trip Plan</h3> <span></span>
-                            <h1 class="text-3xl font-bold">Trip plan mobile app</h1>
-                            <h3
-                                class=" h-10 w-36 text-center hover:bg-red-600 bg-red-500 rounded-full py-2 text-white space-x-2">
-                                View Project <span><i class="fa fa-external-link" aria-hidden="true"></i></span>
-                            </h3>
+                        <div
+                            class="absolute bottom-5 right-5 md:bottom-10 md:right-10 bg-white p-4 md:p-8 rounded-2xl space-y-2 md:space-y-4 w-3/4 md:w-96 h-48 md:h-64">
+                            <h3 class="text-red-600 font-bold">Trip Plan</h3>
+                            <h1 class="text-lg md:text-2xl font-bold">Trip plan mobile app</h1>
+                            <!-- Nút view project responsive -->
+                            <button
+                                class="flex items-center justify-center w-full h-10 sm:w-28 sm:h-8 md:w-36 md:h-10 bg-red-500 rounded-full text-white text-sm md:text-base hover:bg-red-600 focus:outline-none transition-all duration-300">
+                                View Project <span class="ml-2"><i class="fa fa-external-link"
+                                        aria-hidden="true"></i></span>
+                            </button>
                         </div>
                     </div>
                 </a>
@@ -412,80 +472,102 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="bg-gray-900 flex items-center justify-center  relative pb-60">
-            <div class="w-56 h-72 bg-blue-300 absolute right-52 top-14 rounded-xl"></div>
-            <div class="bg-white p-10 rounded-2xl shadow-lg max-w-3xl w-full relative mt-40">
-                <div class="h-32 w-32 bg-blue-300 absolute -bottom-20 -left-24 rounded-xl"></div>
-                <h2 class="text-red-500 font-bold text-lg  mb-2">Contact me</h2>
-                <div class="w-52 h-16 bg-center bg-cover" style="background-image: url(./assets/img/lodo_porfolio.png);"></div>
-                <div class="flex mt-10  w-auto h- space-x-9">
-                    <div class="w-1/2  space-y-8">
+
+    <section id="contact" class="bg-gray-900 py-20">
+        <div class="container mx-auto px-4 flex items-center justify-center relative pb-60">
+            <!-- Hình chữ nhật phía sau cho layout thêm sinh động -->
+            <div
+                class="w-44 h-60 bg-blue-300 absolute right-10 top-10 rounded-xl sm:w-56 sm:h-72 sm:right-20 sm:top-14">
+            </div>
+
+            <!-- Form Contact -->
+            <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-lg max-w-3xl w-full relative mt-20 sm:mt-40">
+                <div
+                    class="h-24 w-24 bg-blue-300 absolute -bottom-12 -left-12 rounded-xl sm:h-32 sm:w-32 sm:-bottom-20 sm:-left-24">
+                </div>
+                <h2 class="text-red-500 font-bold text-lg sm:text-xl mb-4">Contact me</h2>
+
+                <!-- Logo hoặc hình ảnh -->
+                <div class="  w-44 h-14 bg-center bg-cover sm:w-52 sm:h-16"
+                    style="background-image: url(./assets/img/lodo_porfolio.png);"></div>
+
+                <!-- Form và thông tin liên hệ chia đôi theo chiều ngang hoặc dọc -->
+                <div class="flex flex-col sm:flex-row mt-10 space-y-6 sm:space-y-0 sm:space-x-9">
+
+                    <!-- Form bên trái -->
+                    <div class="w-full sm:w-1/2 space-y-6">
                         <input type="text" placeholder="Name"
                             class="w-full h-12 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border">
                         <input type="email" placeholder="Email"
                             class="w-full h-12 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border">
                         <textarea placeholder="Message"
-                            class="w-full h-40 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border outline-none"></textarea>
+                            class="w-full h-32 sm:h-40 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 border"></textarea>
                         <button
-                            class="bg-red-500 w-full text-white px-6 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">Submit
-                            Message</button>
+                            class="bg-red-500 w-full text-white px-6 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+                            Submit Message
+                        </button>
                     </div>
-                    <div class="space-y-7">
-                        <div class="h-16 w-80 flex  space-x-5">
+
+                    <!-- Thông tin liên hệ bên phải -->
+                    <div class="w-full sm:w-1/2 space-y-6">
+                        <div class="flex items-center space-x-4">
                             <div
-                                class="w-16 h-auto bg-blue-300 rounded-full flex justify-center items-center text-3xl text-white">
+                                class="w-12 h-12 bg-blue-300 rounded-full flex justify-center items-center text-2xl text-white sm:w-16 sm:h-16">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </div>
                             <div class="text-black">
-                                <h3 class="text-xl font-bold">Address</h3>
-                                <p class=" text-sm">Ho Chi Minh - Viet Nam</p>
+                                <h3 class="text-lg sm:text-xl font-bold">Address</h3>
+                                <p class="text-sm">Ho Chi Minh - Viet Nam</p>
                             </div>
                         </div>
-                        <div class="h-16 w-80 flex  space-x-5">
+                        <div class="flex items-center space-x-4">
                             <div
-                                class="w-16 h-auto bg-blue-300 rounded-full flex justify-center items-center text-3xl text-white">
+                                class="w-12 h-12 bg-blue-300 rounded-full flex justify-center items-center text-2xl text-white sm:w-16 sm:h-16">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </div>
                             <div class="text-black">
-                                <h3 class="text-xl font-bold">Email</h3>
-                                <p class=" text-sm">phanminhdat01@gmail.com</p>
+                                <h3 class="text-lg sm:text-xl font-bold">Email</h3>
+                                <p class="text-sm">phanminhdat01@gmail.com</p>
                             </div>
                         </div>
-                        <div class="h-16 w-80 flex  space-x-5">
+                        <div class="flex items-center space-x-4">
                             <div
-                                class="w-16 h-auto bg-blue-300 rounded-full flex justify-center items-center text-3xl text-white">
+                                class="w-12 h-12 bg-blue-300 rounded-full flex justify-center items-center text-2xl text-white sm:w-16 sm:h-16">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </div>
                             <div class="text-black">
-                                <h3 class="text-xl font-bold">Phone</h3>
-                                <p class=" text-sm">+84 384028176</p>
+                                <h3 class="text-lg sm:text-xl font-bold">Phone</h3>
+                                <p class="text-sm">+84 384028176</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-            </div>
-        </div>
-    </section>
     <section id="footer">
-        <div class="w-auto h-40 bg-black flex justify-around items-center text-white">
-            <h3>Developed with love by <span class="font-bold">DatDev</span> 2024</h3>
-            <div class="flex space-x-10">
-                <h3>Terms & Condition</h3>
-                <h3>Privacy Policy</h3>
+        <div class="w-full h-40 bg-black flex flex-col justify-center md:flex-row md:justify-between  items-center text-white px-4 md:px-10">
+            <h3 class="text-center md:text-left mb-4 md:mb-0">
+                Developed with love by <span class="font-bold">DatDev</span> 2024
+            </h3>
+            <div class="flex space-x-4">
+                <h3 class="cursor-pointer hover:text-blue-400">Terms & Conditions</h3>
+                <h3 class="cursor-pointer hover:text-blue-400">Privacy Policy</h3>
             </div>
         </div>
     </section>
+    
     <div class="cursor">
         <div class="inner-circle"></div>
         <div class="outer-circle"></div>
     </div>
-    <div id="backToTop" class="flex justify-between items-center fixed right-0 bottom-28 w-auto rotate-90 transform text-red-300">
+    <div id="backToTop"
+        class="flex justify-between items-center fixed right-0 bottom-28 w-auto rotate-90 transform text-red-300">
         <a href="">TO TOP</a>
         <div class="w-16 h-1 bg-red-400"></div>
     </div>
-    
+
 
 
     <script src="main.js"></script>
